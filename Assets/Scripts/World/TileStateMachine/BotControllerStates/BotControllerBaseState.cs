@@ -14,7 +14,7 @@ namespace World.TileStateMachine.BotControllerStates
 
         public Oracle.Resources resources => oracle.saveData.resources;
 
-        public (bool, float) RunTimer(float currentTime, float maxTime)
+        public (bool, float) TimerInfo(float currentTime, float maxTime)
         {
             var completionPercent = currentTime / maxTime;
             return (completionPercent >= 1, completionPercent);

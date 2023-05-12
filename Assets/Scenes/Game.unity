@@ -16694,7 +16694,7 @@ MonoBehaviour:
       copperTimerData:
         baseResourceGatherTime: 0
       coalTimerData:
-        baseResourceGatherTime: 0
+        baseResourceGatherTime: 2
       stoneTimerData:
         baseResourceGatherTime: 0
       siliconTimerData:

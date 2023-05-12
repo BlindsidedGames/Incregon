@@ -14,8 +14,7 @@ namespace World.TileStateMachine.BotControllerStates
 
         public override void UpdateState(TileBotControllerState botController)
         {
-            Debug.Log("hello!");
-            var timerData = RunTimer(tile.tileData.tileBuildingTimer,
+            var timerData = TimerInfo(tile.tileData.tileBuildingTimer,
                 tile.timerBalancing.coalTimerData.baseResourceGatherTime);
 
             switch (timerData.Item1)
