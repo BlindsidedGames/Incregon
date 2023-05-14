@@ -151,6 +151,7 @@ public class Oracle : SerializedMonoBehaviour
         }
 
         Tiles = saveData.Tiles;
+        TileResourcesOwned = saveData.TileResourcesOwned;
     }
 
     public void LoadState(string filePath)
@@ -182,36 +183,29 @@ public class Oracle : SerializedMonoBehaviour
     #region LevelData
 
     public Data data;
+    public Dictionary<TileResource, Resource> TileResourcesOwned = new();
+
     [Space(10)] public Dictionary<int, Tile> Tiles = new();
+    public Dictionary<TileResource, TileBalancing> tileBalancing = new();
 
     [Serializable]
     public class Data
     {
-        public TimerBalancing timerBalancing;
+        public float xpPerCompletion = 10;
+        public double xpForFirstLevel = 100;
+        public float exponent = 1.29f;
     }
 
     [Serializable]
-    public class TimerBalancing
+    public class TileBalancing
     {
-        public TimerData woodTimerData;
-        public TimerData ironTimerData;
-        public TimerData copperTimerData;
-        public TimerData coalTimerData;
-        public TimerData stoneTimerData;
-        public TimerData siliconTimerData;
-        public TimerData titaniumTimerData;
-        public TimerData uraniumTimerData;
-        public TimerData rareMetalsTimerData;
-        public TimerData oilTimerData;
-        public TimerData sulfuricAcidTimerData;
-        public TimerData waterTimerData;
-        public TimerData hydrogenTimerData;
+        public TimerData tileTimer;
     }
 
     [Serializable]
     public class TimerData
     {
-        public float baseResourceGatherTime;
+        public float ResourceGatherTime;
     }
 
     #endregion
@@ -231,6 +225,8 @@ public class Oracle : SerializedMonoBehaviour
 
 
         public Resources resources = new();
+
+        public Dictionary<TileResource, Resource> TileResourcesOwned = new();
         public Dictionary<int, Tile> Tiles = new();
     }
 
@@ -238,6 +234,12 @@ public class Oracle : SerializedMonoBehaviour
     public class BuildNumberChecker
     {
         public long buildNumber;
+    }
+
+    [Serializable]
+    public class Resource
+    {
+        public double resource;
     }
 
     [Serializable]
@@ -301,11 +303,20 @@ public class Oracle : SerializedMonoBehaviour
         public TileBuilding tileBuilding = TileBuilding.None;
         public TileBuildingData tileBuildingData = new();
         public float tileBuildingTimer;
+        public TileCalculations tileBalancing = new();
+    }
+
+    [Serializable]
+    public class TileCalculations
+    {
+        public float tileBuildingTimerMax;
     }
 
     [Serializable]
     public class TileBuildingData
     {
+        public BuildingTier buildingTier = BuildingTier.Tier1;
+
         public SmelterRecipe smelterRecipe = SmelterRecipe.None;
         public ChemicalPlantRecipe chemicalPlantRecipe = ChemicalPlantRecipe.None;
         public AssemblerRecipe assemblerRecipe = AssemblerRecipe.None;
@@ -317,9 +328,7 @@ public class Oracle : SerializedMonoBehaviour
     public class LevelingData
     {
         public double experience;
-        public double xpForFirstLevel = 100;
-        public long level = 1;
-        public float exponent = 1.29f;
+        public long level;
     }
 
 
@@ -344,6 +353,13 @@ public class Oracle : SerializedMonoBehaviour
     #endregion
 
     #region Enums
+
+    public enum BuildingTier
+    {
+        Tier1,
+        Tier2,
+        Tier3
+    }
 
     public enum TileResource
     {

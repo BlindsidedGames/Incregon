@@ -247,9 +247,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1621642466}
     m_Modifications:
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b7b92e1d708ea884c9ac484da7fc2d3e, type: 3}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6132076
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6132076
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6132076
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407342485584890993, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8197159298755795995, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
       propertyPath: m_Name
       value: +1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471649471643709345, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: tileResource
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9076828165364803739, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
       propertyPath: m_Pivot.x
@@ -1134,9 +1158,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 985896499}
     m_Modifications:
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 54e0263c17b14402db61fa7c3901b46a, type: 3}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.70159215
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.45660377
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407342485584890993, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8197159298755795995, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
       propertyPath: m_Name
       value: +1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471649471643709345, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: tileResource
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 9076828165364803739, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
       propertyPath: m_Pivot.x
@@ -3510,9 +3558,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 462759854}
     m_Modifications:
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b3006fc6789d546f0a1f7ecd4cabee63, type: 3}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.11868882
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407342485584890993, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8197159298755795995, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
       propertyPath: m_Name
       value: Center
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471649471643709345, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: tileResource
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9076828165364803739, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
       propertyPath: m_Pivot.x
@@ -5065,9 +5137,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1750376763}
     m_Modifications:
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.34603062
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.4213201
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4245283
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407342485584890993, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8197159298755795995, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
       propertyPath: m_Name
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471649471643709345, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: tileResource
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9076828165364803739, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
       propertyPath: m_Pivot.x
@@ -5819,9 +5911,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1034383525}
     m_Modifications:
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.51180506
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407342485584890993, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8197159298755795995, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
       propertyPath: m_Name
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471649471643709345, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: tileResource
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9076828165364803739, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
       propertyPath: m_Pivot.x
@@ -7773,9 +7885,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 462759854}
     m_Modifications:
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 66549a18149194521901c6b49ccba0bb, type: 3}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.72925806
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407342485584890993, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8197159298755795995, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
       propertyPath: m_Name
       value: +1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471649471643709345, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: tileResource
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 9076828165364803739, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
       propertyPath: m_Pivot.x
@@ -9686,9 +9826,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1750376763}
     m_Modifications:
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 08f6c050081764cceb1f2c440649e579, type: 3}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5471698
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5471698
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5471698
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407342485584890993, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8197159298755795995, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
       propertyPath: m_Name
       value: Center
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471649471643709345, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: tileResource
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9076828165364803739, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
       propertyPath: m_Pivot.x
@@ -11206,6 +11370,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1750376763}
     m_Modifications:
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.4056604
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.4056604
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4056604
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407342485584890993, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8197159298755795995, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
       propertyPath: m_Name
       value: -2
@@ -14987,9 +15167,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1034383525}
     m_Modifications:
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6668086
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.2584905
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407342485584890993, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8197159298755795995, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
       propertyPath: m_Name
       value: +1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471649471643709345, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: tileResource
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9076828165364803739, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
       propertyPath: m_Pivot.x
@@ -15236,9 +15436,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1621642466}
     m_Modifications:
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b7b92e1d708ea884c9ac484da7fc2d3e, type: 3}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9344311
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407342485584890993, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8197159298755795995, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
       propertyPath: m_Name
       value: Center
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471649471643709345, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: tileResource
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9076828165364803739, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
       propertyPath: m_Pivot.x
@@ -15624,9 +15848,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1621642466}
     m_Modifications:
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b7b92e1d708ea884c9ac484da7fc2d3e, type: 3}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9387398
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407342485584890993, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8197159298755795995, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
       propertyPath: m_Name
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471649471643709345, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: tileResource
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 9076828165364803739, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
       propertyPath: m_Pivot.x
@@ -16451,9 +16699,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1034383525}
     m_Modifications:
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.14129584
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.28667116
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.46226418
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407342485584890993, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8197159298755795995, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
       propertyPath: m_Name
       value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471649471643709345, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: tileResource
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9076828165364803739, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
       propertyPath: m_Pivot.x
@@ -16618,6 +16886,344 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: tileBalancing
+      Entry: 7
+      Data: 2|System.Collections.Generic.Dictionary`2[[Oracle+TileResource, Assembly-CSharp],[Oracle+TileBalancing,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 3|System.Collections.Generic.EnumEqualityComparer`1[[Oracle+TileResource,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 13
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 4|Oracle+TileBalancing, Assembly-CSharp
+    - Name: tileTimer
+      Entry: 7
+      Data: 5|Oracle+TimerData, Assembly-CSharp
+    - Name: ResourceGatherTime
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 7
+      Data: 6|Oracle+TileBalancing, Assembly-CSharp
+    - Name: tileTimer
+      Entry: 7
+      Data: 7|Oracle+TimerData, Assembly-CSharp
+    - Name: ResourceGatherTime
+      Entry: 4
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 7
+      Data: 8|Oracle+TileBalancing, Assembly-CSharp
+    - Name: tileTimer
+      Entry: 7
+      Data: 9|Oracle+TimerData, Assembly-CSharp
+    - Name: ResourceGatherTime
+      Entry: 4
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 7
+      Data: 10|Oracle+TileBalancing, Assembly-CSharp
+    - Name: tileTimer
+      Entry: 7
+      Data: 11|Oracle+TimerData, Assembly-CSharp
+    - Name: ResourceGatherTime
+      Entry: 4
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 5
+    - Name: $v
+      Entry: 7
+      Data: 12|Oracle+TileBalancing, Assembly-CSharp
+    - Name: tileTimer
+      Entry: 7
+      Data: 13|Oracle+TimerData, Assembly-CSharp
+    - Name: ResourceGatherTime
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 6
+    - Name: $v
+      Entry: 7
+      Data: 14|Oracle+TileBalancing, Assembly-CSharp
+    - Name: tileTimer
+      Entry: 7
+      Data: 15|Oracle+TimerData, Assembly-CSharp
+    - Name: ResourceGatherTime
+      Entry: 4
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 7
+    - Name: $v
+      Entry: 7
+      Data: 16|Oracle+TileBalancing, Assembly-CSharp
+    - Name: tileTimer
+      Entry: 7
+      Data: 17|Oracle+TimerData, Assembly-CSharp
+    - Name: ResourceGatherTime
+      Entry: 4
+      Data: 20
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 8
+    - Name: $v
+      Entry: 7
+      Data: 18|Oracle+TileBalancing, Assembly-CSharp
+    - Name: tileTimer
+      Entry: 7
+      Data: 19|Oracle+TimerData, Assembly-CSharp
+    - Name: ResourceGatherTime
+      Entry: 4
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 9
+    - Name: $v
+      Entry: 7
+      Data: 20|Oracle+TileBalancing, Assembly-CSharp
+    - Name: tileTimer
+      Entry: 7
+      Data: 21|Oracle+TimerData, Assembly-CSharp
+    - Name: ResourceGatherTime
+      Entry: 4
+      Data: 25
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 7
+      Data: 22|Oracle+TileBalancing, Assembly-CSharp
+    - Name: tileTimer
+      Entry: 7
+      Data: 23|Oracle+TimerData, Assembly-CSharp
+    - Name: ResourceGatherTime
+      Entry: 4
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 11
+    - Name: $v
+      Entry: 7
+      Data: 24|Oracle+TileBalancing, Assembly-CSharp
+    - Name: tileTimer
+      Entry: 7
+      Data: 25|Oracle+TimerData, Assembly-CSharp
+    - Name: ResourceGatherTime
+      Entry: 4
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 12
+    - Name: $v
+      Entry: 7
+      Data: 26|Oracle+TileBalancing, Assembly-CSharp
+    - Name: tileTimer
+      Entry: 7
+      Data: 27|Oracle+TimerData, Assembly-CSharp
+    - Name: ResourceGatherTime
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 13
+    - Name: $v
+      Entry: 7
+      Data: 28|Oracle+TileBalancing, Assembly-CSharp
+    - Name: tileTimer
+      Entry: 7
+      Data: 29|Oracle+TimerData, Assembly-CSharp
+    - Name: ResourceGatherTime
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   buildNumber:
     buildNumber: 0
   Loaded: 0
@@ -16686,33 +17292,9 @@ MonoBehaviour:
       dysonSolarPanel: 0
       deuterium: 0
   data:
-    timerBalancing:
-      woodTimerData:
-        baseResourceGatherTime: 0
-      ironTimerData:
-        baseResourceGatherTime: 0
-      copperTimerData:
-        baseResourceGatherTime: 0
-      coalTimerData:
-        baseResourceGatherTime: 2
-      stoneTimerData:
-        baseResourceGatherTime: 0
-      siliconTimerData:
-        baseResourceGatherTime: 0
-      titaniumTimerData:
-        baseResourceGatherTime: 0
-      uraniumTimerData:
-        baseResourceGatherTime: 0
-      rareMetalsTimerData:
-        baseResourceGatherTime: 0
-      oilTimerData:
-        baseResourceGatherTime: 0
-      sulfuricAcidTimerData:
-        baseResourceGatherTime: 0
-      waterTimerData:
-        baseResourceGatherTime: 0
-      hydrogenTimerData:
-        baseResourceGatherTime: 0
+    xpPerCompletion: 10
+    xpForFirstLevel: 100
+    exponent: 1.29
 --- !u!4 &1700456499
 Transform:
   m_ObjectHideFlags: 0
@@ -20189,9 +20771,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 462759854}
     m_Modifications:
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7f584815c121d4a55a9cc9576d041dfd, type: 3}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8207547
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8207547
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558282953708130069, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8207547
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407342485584890993, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8197159298755795995, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
       propertyPath: m_Name
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471649471643709345, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
+      propertyPath: tileResource
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9076828165364803739, guid: 4d597301feab15f47aeec10fdadb0f8d, type: 3}
       propertyPath: m_Pivot.x
