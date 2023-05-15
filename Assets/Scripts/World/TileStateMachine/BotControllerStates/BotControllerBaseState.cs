@@ -6,11 +6,11 @@ namespace World.TileStateMachine.BotControllerStates
 {
     public abstract class BotControllerBaseState
     {
-        public abstract void EnterState(TileBotControllerState botController);
+        public abstract void EnterState(TileManager tile);
 
-        public abstract void UpdateState(TileBotControllerState botController);
+        public abstract void UpdateState(TileManager tile);
 
-        public abstract void OnExitState(TileBotControllerState botController);
+        public abstract void OnExitState(TileManager tile);
 
         public Data data => oracle.data;
 

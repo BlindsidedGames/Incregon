@@ -5,7 +5,6 @@ namespace World.TileStateMachine.SmelterStates
 {
     public class SmelterIronIngotState : SmelterBaseState
     {
-        public TileManager tile;
         private Resource resource;
         private readonly Recipe recipe = new();
         private TileBalancing tileBalancingData;
@@ -13,9 +12,8 @@ namespace World.TileStateMachine.SmelterStates
 
         private bool isProcessing;
 
-        public override void EnterState(TileSmelterState smelter)
+        public override void EnterState(TileManager tile)
         {
-            tile = smelter.tile;
             tileBalancing = tile.tileData.tileBalancing;
             tileBalancingData = oracle.smelterBalancing[Resources.IronIngot];
 
@@ -43,12 +41,12 @@ namespace World.TileStateMachine.SmelterStates
             }
         }
 
-        public override void UpdateState(TileSmelterState smelter)
+        public override void UpdateState(TileManager tile)
         {
             isProcessing = RunBuilding(tile, tileBalancingData, tileBalancing, recipe, isProcessing);
         }
 
-        public override void OnExitState(TileSmelterState smelter)
+        public override void OnExitState(TileManager tile)
         {
         }
 

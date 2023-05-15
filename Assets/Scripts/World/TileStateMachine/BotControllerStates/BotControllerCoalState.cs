@@ -5,14 +5,12 @@ namespace World.TileStateMachine.BotControllerStates
 {
     public class BotControllerCoalState : BotControllerBaseState
     {
-        public TileManager tile;
         private Resource resource;
         private TileBalancing tileBalancingData;
         private TileCalculations tileBalancing;
 
-        public override void EnterState(TileBotControllerState botController)
+        public override void EnterState(TileManager tile)
         {
-            tile = botController.tile;
             tileBalancingData = oracle.tileBalancing[tile.tileResource];
             tileBalancing = tile.tileData.tileBalancing;
 
@@ -24,13 +22,13 @@ namespace World.TileStateMachine.BotControllerStates
             OnCompletionInfoUpdate(tile, resource.resource);
         }
 
-        public override void UpdateState(TileBotControllerState botController)
+        public override void UpdateState(TileManager tile)
         {
             RunBuilding(tile, tileBalancingData, tileBalancing, resource);
         }
 
 
-        public override void OnExitState(TileBotControllerState botController)
+        public override void OnExitState(TileManager tile)
         {
             throw new NotImplementedException();
         }

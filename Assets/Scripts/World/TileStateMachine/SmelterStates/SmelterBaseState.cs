@@ -8,11 +8,11 @@ namespace World.TileStateMachine.SmelterStates
 {
     public abstract class SmelterBaseState
     {
-        public abstract void EnterState(TileSmelterState smelter);
+        public abstract void EnterState(TileManager tile);
 
-        public abstract void UpdateState(TileSmelterState smelter);
+        public abstract void UpdateState(TileManager tile);
 
-        public abstract void OnExitState(TileSmelterState smelter);
+        public abstract void OnExitState(TileManager tile);
 
         public abstract void ProcessResources(TileManager tile);
 

@@ -33,7 +33,7 @@ namespace World
             failedRecipes = new List<Recipe>();
         }
 
-        #region Singleton class: BuildManager
+        #region Singleton class: RecipeQueue
 
         public static RecipeQueue recipeQueueStatic;
 

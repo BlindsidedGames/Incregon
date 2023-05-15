@@ -7,8 +7,6 @@ namespace World.TileStateMachine
 {
     public class TileBotControllerState : TileBaseState
     {
-        public TileManager tile;
-
         public BotControllerBaseState currentState;
         public BotControllerWoodState woodState = new();
         public BotControllerIronState ironState = new();
@@ -26,60 +24,59 @@ namespace World.TileStateMachine
 
         public override void EnterState(TileManager tile)
         {
-            this.tile = tile;
             switch (tile.tileResource)
             {
                 case TileResource.Wood:
                     currentState = woodState;
-                    currentState.EnterState(this);
+                    currentState.EnterState(tile);
                     break;
                 case TileResource.Iron:
                     currentState = ironState;
-                    currentState.EnterState(this);
+                    currentState.EnterState(tile);
                     break;
                 case TileResource.Copper:
                     currentState = copperState;
-                    currentState.EnterState(this);
+                    currentState.EnterState(tile);
                     break;
                 case TileResource.Coal:
                     currentState = coalState;
-                    currentState.EnterState(this);
+                    currentState.EnterState(tile);
                     break;
                 case TileResource.Stone:
                     currentState = stoneState;
-                    currentState.EnterState(this);
+                    currentState.EnterState(tile);
                     break;
                 case TileResource.Silicon:
                     currentState = siliconState;
-                    currentState.EnterState(this);
+                    currentState.EnterState(tile);
                     break;
                 case TileResource.Titanium:
                     currentState = titaniumState;
-                    currentState.EnterState(this);
+                    currentState.EnterState(tile);
                     break;
                 case TileResource.Uranium:
                     currentState = uraniumState;
-                    currentState.EnterState(this);
+                    currentState.EnterState(tile);
                     break;
                 case TileResource.RareMetals:
                     currentState = rareMetalsState;
-                    currentState.EnterState(this);
+                    currentState.EnterState(tile);
                     break;
                 case TileResource.Oil:
                     currentState = oilState;
-                    currentState.EnterState(this);
+                    currentState.EnterState(tile);
                     break;
                 case TileResource.SulfuricAcid:
                     currentState = sulfuricAcidState;
-                    currentState.EnterState(this);
+                    currentState.EnterState(tile);
                     break;
                 case TileResource.Water:
                     currentState = waterState;
-                    currentState.EnterState(this);
+                    currentState.EnterState(tile);
                     break;
                 case TileResource.Hydrogen:
                     currentState = hydrogenState;
-                    currentState.EnterState(this);
+                    currentState.EnterState(tile);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -88,7 +85,7 @@ namespace World.TileStateMachine
 
         public override void UpdateState(TileManager tile)
         {
-            currentState.UpdateState(this);
+            currentState.UpdateState(tile);
         }
 
         public override void OnExitState(TileManager tile)

@@ -2,15 +2,15 @@
 {
     public class SmelterEmptyState : SmelterBaseState
     {
-        public override void EnterState(TileSmelterState smelter)
+        public override void EnterState(TileManager tile)
         {
         }
 
-        public override void UpdateState(TileSmelterState smelter)
+        public override void UpdateState(TileManager tile)
         {
         }
 
-        public override void OnExitState(TileSmelterState smelter)
+        public override void OnExitState(TileManager tile)
         {
         }
 
