@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace World.TileStateMachine
@@ -14,6 +15,11 @@ namespace World.TileStateMachine
 
         public override void OnExitState(TileManager tile)
         {
+        }
+
+        public override void ProcessResources(TileManager tile)
+        {
+            throw new NotImplementedException();
         }
     }
 }

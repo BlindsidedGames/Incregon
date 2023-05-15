@@ -17,5 +17,10 @@ namespace World.TileStateMachine
         {
             throw new NotImplementedException();
         }
+
+        public override void ProcessResources(TileManager tile)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

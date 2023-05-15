@@ -12,8 +12,6 @@ namespace World.TileStateMachine.BotControllerStates
 
         public abstract void OnExitState(TileBotControllerState botController);
 
-
-        public Oracle.Resources resources => oracle.saveData.resources;
         public Data data => oracle.data;
 
         public void OnCompletionInfoUpdate(TileManager tile, double resource)

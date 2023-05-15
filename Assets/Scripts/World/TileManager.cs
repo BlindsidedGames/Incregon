@@ -1,13 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Utilities;
 using World.TileStateMachine;
 using static Oracle;
-using static BuildManager;
+using static BuildingManager;
 
 public class TileManager : MonoBehaviour
 {
@@ -18,6 +15,8 @@ public class TileManager : MonoBehaviour
     [SerializeField] private Button tileButton;
     [Space(10)] [SerializeField] private GameObject[] allBuildings;
     [SerializeField] private GameObject BotController;
+    [SerializeField] private GameObject Smelter;
+
     [SerializeField] private GameObject buildingLevelInfo;
     public Image timerFillImage;
     public TMP_Text resourcesText;
@@ -47,10 +46,18 @@ public class TileManager : MonoBehaviour
 
     private void OpenTileMenu()
     {
-        if (tileResource == TileResource.None) buildManager.botControllerButton.interactable = false;
-        else buildManager.botControllerButton.interactable = true;
-        buildManager.tileManager = this;
-        buildManager.OpenMenu();
+        buildingManager.tileManager = this;
+        switch (tileData.tileBuilding)
+        {
+            case TileBuilding.None:
+                if (tileResource == TileResource.None) buildingManager.botControllerButton.interactable = false;
+                else buildingManager.botControllerButton.interactable = true;
+                buildingManager.OpenMenu(TileBuilding.None);
+                break;
+            case TileBuilding.Smelter:
+                buildingManager.OpenMenu(TileBuilding.Smelter);
+                break;
+        }
     }
 
     public void SellBuilding()
@@ -60,7 +67,7 @@ public class TileManager : MonoBehaviour
         tileData.tileLevel = new LevelingData();
         buildingLevelInfo.SetActive(false);
         SwitchState(emptyState);
-        buildManager.CloseMenu();
+        buildingManager.CloseMenu();
     }
 
     public void BuildBuilding(TileBuilding buildingToBuild)
@@ -72,8 +79,14 @@ public class TileManager : MonoBehaviour
                 foreach (var building in allBuildings) building.SetActive(false);
                 BotController.SetActive(true);
                 buildingLevelInfo.SetActive(true);
-                Debug.Log("switchingstatetoBotController");
                 SwitchState(botControllerState);
+                break;
+            case TileBuilding.Smelter:
+                foreach (var building in allBuildings) building.SetActive(false);
+                BotController.SetActive(true);
+                Smelter.SetActive(true);
+                buildingLevelInfo.SetActive(true);
+                SwitchState(smelterState);
                 break;
         }
     }
@@ -102,6 +115,11 @@ public class TileManager : MonoBehaviour
         currentState.OnExitState(this);
         currentState = state;
         state.EnterState(this);
+    }
+
+    public void ProcessResources()
+    {
+        currentState.ProcessResources(this);
     }
 
     #endregion

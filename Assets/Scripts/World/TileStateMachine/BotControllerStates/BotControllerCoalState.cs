@@ -1,7 +1,4 @@
 ﻿using System;
-using Unity.VisualScripting;
-using UnityEngine;
-using Utilities;
 using static Oracle;
 
 namespace World.TileStateMachine.BotControllerStates
@@ -19,9 +16,9 @@ namespace World.TileStateMachine.BotControllerStates
             tileBalancingData = oracle.tileBalancing[tile.tileResource];
             tileBalancing = tile.tileData.tileBalancing;
 
-            if (!oracle.saveData.TileResourcesOwned.ContainsKey(tile.tileResource))
-                oracle.saveData.TileResourcesOwned.Add(tile.tileResource, new Resource());
-            resource = oracle.saveData.TileResourcesOwned[tile.tileResource];
+            if (!oracle.saveData.ownedResources.ContainsKey(Resources.Coal))
+                oracle.saveData.ownedResources.Add(Resources.Coal, new Resource());
+            resource = oracle.saveData.ownedResources[Resources.Coal];
 
             tile.timerFillImage.color = tile.tileResourceImage.color;
             OnCompletionInfoUpdate(tile, resource.resource);

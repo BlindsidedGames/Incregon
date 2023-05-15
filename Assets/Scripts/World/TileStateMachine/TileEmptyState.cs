@@ -19,5 +19,10 @@ namespace World.TileStateMachine
         {
             Debug.Log("Left EmptyState");
         }
+
+        public override void ProcessResources(TileManager tile)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

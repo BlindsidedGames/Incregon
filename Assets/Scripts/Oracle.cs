@@ -151,7 +151,7 @@ public class Oracle : SerializedMonoBehaviour
         }
 
         Tiles = saveData.Tiles;
-        TileResourcesOwned = saveData.TileResourcesOwned;
+        OwnedResources = saveData.ownedResources;
     }
 
     public void LoadState(string filePath)
@@ -183,10 +183,12 @@ public class Oracle : SerializedMonoBehaviour
     #region LevelData
 
     public Data data;
-    public Dictionary<TileResource, Resource> TileResourcesOwned = new();
 
     [Space(10)] public Dictionary<int, Tile> Tiles = new();
     public Dictionary<TileResource, TileBalancing> tileBalancing = new();
+    public Dictionary<Resources, TileBalancing> smelterBalancing = new();
+    public Dictionary<Resources, Resource> OwnedResources = new();
+
 
     [Serializable]
     public class Data
@@ -224,9 +226,7 @@ public class Oracle : SerializedMonoBehaviour
         public Preferences preferences = new();
 
 
-        public Resources resources = new();
-
-        public Dictionary<TileResource, Resource> TileResourcesOwned = new();
+        public Dictionary<Resources, Resource> ownedResources = new();
         public Dictionary<int, Tile> Tiles = new();
     }
 
@@ -242,56 +242,61 @@ public class Oracle : SerializedMonoBehaviour
         public double resource;
     }
 
-    [Serializable]
-    public class Resources
+    public enum Resources
     {
-        public double energy;
-        [Space(10)] public double water;
-        public double wood;
-        public double coal;
-        public double stone;
-        public double iron;
-        public double copper;
-        public double titanium;
-        public double silicon;
-        public double oil;
-        public double hydrogen;
-        public double rareMetals;
-        public double uranium;
-        public double sulfuricAcid;
-        [Space(10)] public double ironIngot;
-        public double copperIngot;
-        public double planks;
-        public double concrete;
-        public double glass;
-        public double reinforcedGlass;
-        public double steel;
-        public double carbon;
-        public double titaniumIngot;
-        public double titaniumAlloy;
-        public double gear;
-        public double magnet;
-        public double electricMotor;
-        public double magneticCoil;
-        public double electroMagnet;
-        public double thruster;
-        public double circuitBoard;
-        public double cpu;
-        public double diamondChipset;
-        public double quantumChipset;
-        public double spaceProbe;
-        public double spaceShip;
-        public double plastic;
-        public double superconductor;
-        public double uranium235;
-        public double graphene;
-        public double carbonNanotubes;
-        public double battery;
-        public double swarmSolarPanel;
-        public double dysonFramePart;
-        public double dysonNanoLattice;
-        public double dysonSolarPanel;
-        public double deuterium;
+        Energy,
+        Water,
+        Wood,
+        Coal,
+        Stone,
+        Iron,
+        Copper,
+        Titanium,
+        Silicon,
+        Oil,
+        Hydrogen,
+        RareMetals,
+        Uranium,
+        SulfuricAcid,
+        IronIngot,
+        CopperIngot,
+        Planks,
+        Concrete,
+        Glass,
+        ReinforcedGlass,
+        Steel,
+        Carbon,
+        TitaniumIngot,
+        TitaniumAlloy,
+        Gear,
+        Magnet,
+        ElectricMotor,
+        MagneticCoil,
+        ElectroMagnet,
+        Thruster,
+        CircuitBoard,
+        CPU,
+        DiamondChipset,
+        QuantumChipset,
+        SpaceProbe,
+        SpaceShip,
+        Plastic,
+        Superconductor,
+        Uranium235,
+        Graphene,
+        CarbonNanotubes,
+        Battery,
+        SwarmSolarPanel,
+        DysonFramePart,
+        DysonNanoLattice,
+        DysonSolarPanel,
+        Deuterium
+    }
+
+    public class Recipe
+    {
+        public Dictionary<Resources, Resource> Ingredients = new();
+        public TileManager Tile { get; set; }
     }
 
     [Serializable]

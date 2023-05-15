@@ -16,9 +16,9 @@ namespace World.TileStateMachine.BotControllerStates
             tileBalancingData = oracle.tileBalancing[tile.tileResource];
             tileBalancing = tile.tileData.tileBalancing;
 
-            if (!oracle.saveData.TileResourcesOwned.ContainsKey(tile.tileResource))
-                oracle.saveData.TileResourcesOwned.Add(tile.tileResource, new Resource());
-            resource = oracle.saveData.TileResourcesOwned[tile.tileResource];
+            if (!oracle.saveData.ownedResources.ContainsKey(Resources.Copper))
+                oracle.saveData.ownedResources.Add(Resources.Copper, new Resource());
+            resource = oracle.saveData.ownedResources[Resources.Copper];
             tile.timerFillImage.color = tile.tileResourceImage.color;
             OnCompletionInfoUpdate(tile, resource.resource);
         }

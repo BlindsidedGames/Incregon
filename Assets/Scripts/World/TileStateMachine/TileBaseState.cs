@@ -7,5 +7,7 @@ namespace World.TileStateMachine
         public abstract void UpdateState(TileManager tile);
 
         public abstract void OnExitState(TileManager tile);
+
+        public abstract void ProcessResources(TileManager tile);
     }
 }
