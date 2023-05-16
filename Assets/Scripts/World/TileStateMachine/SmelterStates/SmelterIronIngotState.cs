@@ -15,7 +15,7 @@ namespace World.TileStateMachine.SmelterStates
         public override void EnterState(TileManager tile)
         {
             tile.timerFillImage.color = tile.tileResourceImage.color;
-
+            tile.smelterIronIngotImageGameObject.SetActive(true);
             tileBalancingData = oracle.smelterBalancing[Resources.IronIngot];
             resource = tile.SetResource(Resources.IronIngot);
             recipe = new Recipe();

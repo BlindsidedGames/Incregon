@@ -14,16 +14,17 @@ public class TileManager : MonoBehaviour
 
     [SerializeField] private Button tileButton;
     [Space(10)] [SerializeField] private GameObject[] hideOnSell;
-    [SerializeField] private GameObject BotController;
-    [SerializeField] private GameObject Smelter;
-
-    [SerializeField] private GameObject buildingLevelInfo;
+    [Space(10)] [SerializeField] private GameObject progressBarParent;
     public Image timerFillImage;
     public TMP_Text resourcesText;
+    [Space(10)] [SerializeField] private GameObject buildingLevelInfo;
     public Image levelFillImage;
     public TMP_Text levelText;
-
-    public Image tileResourceImage;
+    [Space(10)] public Image tileResourceImage;
+    public GameObject smelterImageGameObject;
+    public GameObject smelterIronIngotImageGameObject;
+    public GameObject smelterCopperIngotImageGameObject;
+    public GameObject smelterTitaniumIngotImageGameObject;
 
 
     private void Start()
@@ -82,14 +83,14 @@ public class TileManager : MonoBehaviour
         {
             case TileBuilding.BotController:
                 foreach (var building in hideOnSell) building.SetActive(false);
-                BotController.SetActive(true);
+                progressBarParent.SetActive(true);
                 buildingLevelInfo.SetActive(true);
                 SwitchState(botControllerState);
                 break;
             case TileBuilding.Smelter:
                 foreach (var building in hideOnSell) building.SetActive(false);
-                BotController.SetActive(true);
-                Smelter.SetActive(true);
+                progressBarParent.SetActive(true);
+                smelterImageGameObject.SetActive(true);
                 buildingLevelInfo.SetActive(true);
                 SwitchState(smelterState);
                 break;
@@ -118,6 +119,7 @@ public class TileManager : MonoBehaviour
     public void SwitchState(TileBaseState state)
     {
         currentState.OnExitState(this);
+        DisableAllSmelterImages();
         tileData.tileBuildingTimer = 0;
         currentState = state;
         state.EnterState(this);
@@ -168,6 +170,17 @@ public class TileManager : MonoBehaviour
     }
 
     #endregion
+
+    #endregion
+
+    #region SmelterMethods
+
+    public void DisableAllSmelterImages()
+    {
+        smelterIronIngotImageGameObject.SetActive(false);
+        smelterCopperIngotImageGameObject.SetActive(false);
+        //smelterTitaniumIngotImageGameObject.SetActive(false);
+    }
 
     #endregion
 }

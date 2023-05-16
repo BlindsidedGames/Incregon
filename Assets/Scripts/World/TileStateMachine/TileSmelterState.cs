@@ -13,6 +13,7 @@ namespace World.TileStateMachine
 
         public override void EnterState(TileManager tile)
         {
+            tile.smelterImageGameObject.SetActive(true);
             switch (tile.tileData.tileBuildingData.smelterRecipe)
             {
                 case SmelterRecipe.None:
@@ -34,6 +35,7 @@ namespace World.TileStateMachine
         public void SwitchState(SmelterBaseState state, TileManager tile)
         {
             currentState.OnExitState(tile);
+            tile.DisableAllSmelterImages();
             currentState = state;
             EnterState(tile);
         }
@@ -41,6 +43,7 @@ namespace World.TileStateMachine
         public override void OnExitState(TileManager tile)
         {
             currentState.OnExitState(tile);
+            tile.smelterImageGameObject.SetActive(false);
         }
 
         public override void ProcessResources(TileManager tile)
