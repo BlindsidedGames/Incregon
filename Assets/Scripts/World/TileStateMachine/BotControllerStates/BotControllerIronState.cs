@@ -7,23 +7,19 @@ namespace World.TileStateMachine.BotControllerStates
     {
         private Resource resource;
         private TileBalancing tileBalancingData;
-        private TileCalculations tileBalancing;
 
         public override void EnterState(TileManager tile)
         {
             tileBalancingData = oracle.tileBalancing[tile.tileResource];
-            tileBalancing = tile.tileData.tileBalancing;
 
-            if (!oracle.saveData.ownedResources.ContainsKey(Resources.Iron))
-                oracle.saveData.ownedResources.Add(Resources.Iron, new Resource());
-            resource = oracle.saveData.ownedResources[Resources.Iron];
+            resource = tile.SetResource(Resources.Iron);
             tile.timerFillImage.color = tile.tileResourceImage.color;
             OnCompletionInfoUpdate(tile, resource.resource);
         }
 
         public override void UpdateState(TileManager tile)
         {
-            RunBuilding(tile, tileBalancingData, tileBalancing, resource);
+            RunBuilding(tile, tileBalancingData, resource);
         }
 
         public override void OnExitState(TileManager tile)

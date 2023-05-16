@@ -26,11 +26,11 @@ namespace World.TileStateMachine.SmelterStates
             tile.levelText.text = $"Lvl: {tile.tileData.tileLevel.level}";
         }
 
-        public bool RunBuilding(TileManager tile, TileBalancing tileBalancingData, TileCalculations tileBalance,
+        public bool RunBuilding(TileManager tile, TileBalancing tileBalancingData,
             Recipe recipe, bool isProcessing)
         {
             var timerData = tile.TimerInfo(tile.tileData.tileBuildingTimer,
-                tileBalance.tileBuildingTimerMax);
+                tile.tileData.tileBalancing.tileBuildingTimerMax);
 
             if (!isProcessing)
                 switch (timerData.Item1)
@@ -43,8 +43,8 @@ namespace World.TileStateMachine.SmelterStates
                             tile.tileData.tileLevel.level++;
                         }
 
-                        tileBalance.tileBuildingTimerMax = tile.SetBuildingTimer(
-                            tileBalancingData.tileTimer.ResourceGatherTime, tile.tileData.tileLevel.level);
+                        tile.tileData.tileBalancing.tileBuildingTimerMax =
+                            tile.SetBuildingTimer(tileBalancingData.tileTimer.ResourceGatherTime);
 
                         recipeQueueStatic.recipeQueue.Add(recipe);
                         isProcessing = true;

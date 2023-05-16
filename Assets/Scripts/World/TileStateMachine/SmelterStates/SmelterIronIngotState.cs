@@ -6,22 +6,21 @@ namespace World.TileStateMachine.SmelterStates
     public class SmelterIronIngotState : SmelterBaseState
     {
         private Resource resource;
-        private readonly Recipe recipe = new();
+        private Recipe recipe = new();
         private TileBalancing tileBalancingData;
-        private TileCalculations tileBalancing;
 
         private bool isProcessing;
 
         public override void EnterState(TileManager tile)
         {
-            tileBalancing = tile.tileData.tileBalancing;
-            tileBalancingData = oracle.smelterBalancing[Resources.IronIngot];
-
-            if (!oracle.saveData.ownedResources.ContainsKey(Resources.IronIngot))
-                oracle.saveData.ownedResources.Add(Resources.IronIngot, new Resource());
-            resource = oracle.saveData.ownedResources[Resources.IronIngot];
-
             tile.timerFillImage.color = tile.tileResourceImage.color;
+
+            tileBalancingData = oracle.smelterBalancing[Resources.IronIngot];
+            resource = tile.SetResource(Resources.IronIngot);
+            recipe = new Recipe();
+
+            tile.tileData.tileBalancing.tileBuildingTimerMax =
+                tile.SetBuildingTimer(tileBalancingData.tileTimer.ResourceGatherTime);
             OnCompletionInfoUpdate(tile, resource.resource);
 
             switch (tile.tileData.tileBuildingData.buildingTier)
@@ -43,7 +42,7 @@ namespace World.TileStateMachine.SmelterStates
 
         public override void UpdateState(TileManager tile)
         {
-            isProcessing = RunBuilding(tile, tileBalancingData, tileBalancing, recipe, isProcessing);
+            isProcessing = RunBuilding(tile, tileBalancingData, recipe, isProcessing);
         }
 
         public override void OnExitState(TileManager tile)
@@ -52,7 +51,7 @@ namespace World.TileStateMachine.SmelterStates
 
         public override void ProcessResources(TileManager tile)
         {
-            tile.tileData.tileBuildingTimer -= tileBalancing.tileBuildingTimerMax;
+            tile.tileData.tileBuildingTimer -= tile.tileData.tileBalancing.tileBuildingTimerMax;
             switch (tile.tileData.tileBuildingData.buildingTier)
             {
                 case BuildingTier.Tier1:

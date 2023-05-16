@@ -12,25 +12,32 @@ namespace World
 
         private void LateUpdate()
         {
-            foreach (var recipe in recipeQueue)
+            try
             {
-                var processResource = true;
-                foreach (var expr in recipe.Ingredients)
-                    if (expr.Value.resource > oracle.saveData.ownedResources[expr.Key].resource)
-                        processResource = false;
-
-                if (processResource)
+                foreach (var recipe in recipeQueue)
+                {
+                    var processResource = true;
                     foreach (var expr in recipe.Ingredients)
-                    {
-                        oracle.saveData.ownedResources[expr.Key].resource -= expr.Value.resource;
-                        recipe.Tile.ProcessResources();
-                    }
-                else
-                    failedRecipes.Add(recipe);
-            }
+                        if (expr.Value.resource > oracle.saveData.ownedResources[expr.Key].resource)
+                            processResource = false;
 
-            recipeQueue = failedRecipes;
-            failedRecipes = new List<Recipe>();
+                    if (processResource)
+                        foreach (var expr in recipe.Ingredients)
+                        {
+                            oracle.saveData.ownedResources[expr.Key].resource -= expr.Value.resource;
+                            recipe.Tile.ProcessResources();
+                        }
+                    else
+                        failedRecipes.Add(recipe);
+                }
+
+                recipeQueue = failedRecipes;
+                failedRecipes = new List<Recipe>();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
 
         #region Singleton class: RecipeQueue

@@ -7,16 +7,12 @@ namespace World.TileStateMachine.BotControllerStates
     {
         private Resource resource;
         private TileBalancing tileBalancingData;
-        private TileCalculations tileBalancing;
 
         public override void EnterState(TileManager tile)
         {
             tileBalancingData = oracle.tileBalancing[tile.tileResource];
-            tileBalancing = tile.tileData.tileBalancing;
 
-            if (!oracle.saveData.ownedResources.ContainsKey(Resources.Coal))
-                oracle.saveData.ownedResources.Add(Resources.Coal, new Resource());
-            resource = oracle.saveData.ownedResources[Resources.Coal];
+            resource = tile.SetResource(Resources.Coal);
 
             tile.timerFillImage.color = tile.tileResourceImage.color;
             OnCompletionInfoUpdate(tile, resource.resource);
@@ -24,7 +20,7 @@ namespace World.TileStateMachine.BotControllerStates
 
         public override void UpdateState(TileManager tile)
         {
-            RunBuilding(tile, tileBalancingData, tileBalancing, resource);
+            RunBuilding(tile, tileBalancingData, resource);
         }
 
 

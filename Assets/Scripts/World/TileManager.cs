@@ -126,15 +126,22 @@ public class TileManager : MonoBehaviour
 
     #region SharedFunctions
 
+    public Resource SetResource(Oracle.Resources resource)
+    {
+        if (!oracle.saveData.ownedResources.ContainsKey(resource))
+            oracle.saveData.ownedResources.Add(resource, new Resource());
+        return oracle.saveData.ownedResources[resource];
+    }
+
     public (bool, float) TimerInfo(float currentTime, float maxTime)
     {
         var completionPercent = currentTime / maxTime;
         return (completionPercent >= 1, completionPercent);
     }
 
-    public float SetBuildingTimer(float balancingTime, float buildingLevel)
+    public float SetBuildingTimer(float balancingTime)
     {
-        return balancingTime / (1 + buildingLevel * 0.1f);
+        return balancingTime / (1 + tileData.tileLevel.level * 0.1f);
     }
 
     #region Levelling

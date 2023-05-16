@@ -14,16 +14,14 @@ namespace World.TileStateMachine.BotControllerStates
             tileBalancingData = oracle.tileBalancing[tile.tileResource];
             tileBalancing = tile.tileData.tileBalancing;
 
-            if (!oracle.saveData.ownedResources.ContainsKey(Resources.Stone))
-                oracle.saveData.ownedResources.Add(Resources.Stone, new Resource());
-            resource = oracle.saveData.ownedResources[Resources.Stone];
+            resource = tile.SetResource(Resources.Stone);
             tile.timerFillImage.color = tile.tileResourceImage.color;
             OnCompletionInfoUpdate(tile, resource.resource);
         }
 
         public override void UpdateState(TileManager tile)
         {
-            RunBuilding(tile, tileBalancingData, tileBalancing, resource);
+            RunBuilding(tile, tileBalancingData, resource);
         }
 
         public override void OnExitState(TileManager tile)

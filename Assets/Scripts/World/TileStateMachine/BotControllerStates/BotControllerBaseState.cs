@@ -22,11 +22,11 @@ namespace World.TileStateMachine.BotControllerStates
             tile.levelText.text = $"Lvl: {tile.tileData.tileLevel.level}";
         }
 
-        public void RunBuilding(TileManager tile, TileBalancing tileBalancingData, TileCalculations tileBalance,
+        public void RunBuilding(TileManager tile, TileBalancing tileBalancingData,
             Resource resource)
         {
             var timerData = tile.TimerInfo(tile.tileData.tileBuildingTimer,
-                tileBalance.tileBuildingTimerMax);
+                tile.tileData.tileBalancing.tileBuildingTimerMax);
 
             switch (timerData.Item1)
             {
@@ -41,10 +41,10 @@ namespace World.TileStateMachine.BotControllerStates
                     }
 
                     tile.tileData.tileBuildingTimer -=
-                        tileBalance.tileBuildingTimerMax;
+                        tile.tileData.tileBalancing.tileBuildingTimerMax;
 
-                    tileBalance.tileBuildingTimerMax = tile.SetBuildingTimer(
-                        tileBalancingData.tileTimer.ResourceGatherTime, tile.tileData.tileLevel.level);
+                    tile.tileData.tileBalancing.tileBuildingTimerMax =
+                        tile.SetBuildingTimer(tileBalancingData.tileTimer.ResourceGatherTime);
                     break;
                 case false:
                     tile.tileData.tileBuildingTimer += Time.deltaTime;
