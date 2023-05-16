@@ -4,6 +4,7 @@
     {
         public override void EnterState(TileManager tile)
         {
+            OnCompletionInfoUpdate(tile, 0, false);
         }
 
         public override void UpdateState(TileManager tile)

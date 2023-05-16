@@ -24,18 +24,19 @@ public class BuildingManager : MonoBehaviour
         smelterIronIngotButton.onClick.AddListener(() =>
         {
             tileManager.tileData.tileBuildingData.smelterRecipe = SmelterRecipe.IronIngot;
-            tileManager.smelterState.EnterState(tileManager);
+            tileManager.smelterState.SwitchState(tileManager.smelterState.currentState, tileManager);
             SmelterMenu.SetActive(false);
         });
         smelterNoneButton.onClick.AddListener(() =>
         {
             tileManager.tileData.tileBuildingData.smelterRecipe = SmelterRecipe.None;
-            tileManager.smelterState.EnterState(tileManager);
+            tileManager.smelterState.SwitchState(tileManager.smelterState.currentState, tileManager);
             SmelterMenu.SetActive(false);
         });
         sellSmelter.onClick.AddListener(() =>
         {
             tileManager.tileData.tileBuildingData.smelterRecipe = SmelterRecipe.None;
+            tileManager.SwitchState(tileManager.currentState);
             tileManager.SellBuilding();
         });
         sellBuilding.onClick.AddListener(() => tileManager.SellBuilding());
@@ -43,9 +44,13 @@ public class BuildingManager : MonoBehaviour
 
     public void OpenMenu(TileBuilding building)
     {
+        CloseMenu();
         switch (building)
         {
             case TileBuilding.None:
+                buildingMenu.SetActive(true);
+                break;
+            case TileBuilding.BotController:
                 buildingMenu.SetActive(true);
                 break;
             case TileBuilding.Smelter:

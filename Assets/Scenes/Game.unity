@@ -19139,6 +19139,225 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: Recipes
+      Entry: 7
+      Data: 36|System.Collections.Generic.Dictionary`2[[Oracle+Resources, Assembly-CSharp],[Oracle+Recipe,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 37|System.Collections.Generic.EnumEqualityComparer`1[[Oracle+Resources,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 14
+    - Name: $v
+      Entry: 7
+      Data: 38|Oracle+Recipe, Assembly-CSharp
+    - Name: Ingredients
+      Entry: 7
+      Data: 39|System.Collections.Generic.Dictionary`2[[Oracle+Resources, Assembly-CSharp],[Oracle+Resource,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 40|System.Collections.Generic.EnumEqualityComparer`1[[Oracle+Resources,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 5
+    - Name: $v
+      Entry: 7
+      Data: 41|Oracle+Resource, Assembly-CSharp
+    - Name: resource
+      Entry: 4
+      Data: 1
+    - Name: resourceModifier
+      Entry: 4
+      Data: 1
+    - Name: costMultiplier
+      Entry: 4
+      Data: 0
+    - Name: tier1
+      Entry: 4
+      Data: 1
+    - Name: tier2
+      Entry: 4
+      Data: 2
+    - Name: tier3
+      Entry: 4
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Output
+      Entry: 3
+      Data: 14
+    - Name: OutputAmount
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 20
+    - Name: $v
+      Entry: 7
+      Data: 42|Oracle+Recipe, Assembly-CSharp
+    - Name: Ingredients
+      Entry: 7
+      Data: 43|System.Collections.Generic.Dictionary`2[[Oracle+Resources, Assembly-CSharp],[Oracle+Resource,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 44|System.Collections.Generic.EnumEqualityComparer`1[[Oracle+Resources,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 14
+    - Name: $v
+      Entry: 7
+      Data: 45|Oracle+Resource, Assembly-CSharp
+    - Name: resource
+      Entry: 4
+      Data: 1
+    - Name: resourceModifier
+      Entry: 4
+      Data: 1
+    - Name: costMultiplier
+      Entry: 4
+      Data: 0
+    - Name: tier1
+      Entry: 4
+      Data: 1
+    - Name: tier2
+      Entry: 4
+      Data: 2
+    - Name: tier3
+      Entry: 4
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 21
+    - Name: $v
+      Entry: 7
+      Data: 46|Oracle+Resource, Assembly-CSharp
+    - Name: resource
+      Entry: 4
+      Data: 2
+    - Name: resourceModifier
+      Entry: 4
+      Data: 1
+    - Name: costMultiplier
+      Entry: 4
+      Data: 0
+    - Name: tier1
+      Entry: 4
+      Data: 1
+    - Name: tier2
+      Entry: 4
+      Data: 2
+    - Name: tier3
+      Entry: 4
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Output
+      Entry: 3
+      Data: 20
+    - Name: OutputAmount
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   buildNumber:
     buildNumber: 0
   Loaded: 0

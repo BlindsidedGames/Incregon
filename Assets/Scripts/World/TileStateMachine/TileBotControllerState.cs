@@ -90,6 +90,8 @@ namespace World.TileStateMachine
 
         public override void OnExitState(TileManager tile)
         {
+            Debug.Log("Leaving botcontrollerstate");
+            currentState.OnExitState(tile);
         }
 
         public override void ProcessResources(TileManager tile)

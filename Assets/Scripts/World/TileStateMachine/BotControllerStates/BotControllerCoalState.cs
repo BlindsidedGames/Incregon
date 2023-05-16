@@ -26,7 +26,8 @@ namespace World.TileStateMachine.BotControllerStates
 
         public override void OnExitState(TileManager tile)
         {
-            throw new NotImplementedException();
+            tile.tileData.tileBuildingTimer = 0;
+            OnCompletionInfoUpdate(tile, 0, false);
         }
     }
 }

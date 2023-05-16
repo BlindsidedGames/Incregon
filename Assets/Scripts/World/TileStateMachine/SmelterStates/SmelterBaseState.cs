@@ -18,12 +18,13 @@ namespace World.TileStateMachine.SmelterStates
 
         public Data data => oracle.data;
 
-        public void OnCompletionInfoUpdate(TileManager tile, double resource)
+        public void OnCompletionInfoUpdate(TileManager tile, double resource, bool set = true)
         {
-            tile.resourcesText.text = CalcUtils.FormatNumber(resource);
+            tile.resourcesText.text = set ? CalcUtils.FormatNumber(resource) : "Not Set";
             tile.levelFillImage.fillAmount = (float)tile.XpToLevel(tile.tileData.tileLevel.level,
                 tile.tileData.tileLevel.experience);
             tile.levelText.text = $"Lvl: {tile.tileData.tileLevel.level}";
+            if (!set) tile.timerFillImage.fillAmount = 0;
         }
 
         public bool RunBuilding(TileManager tile, TileBalancing tileBalancingData,

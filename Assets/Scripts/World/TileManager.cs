@@ -13,7 +13,7 @@ public class TileManager : MonoBehaviour
     public Tile tileData;
 
     [SerializeField] private Button tileButton;
-    [Space(10)] [SerializeField] private GameObject[] allBuildings;
+    [Space(10)] [SerializeField] private GameObject[] hideOnSell;
     [SerializeField] private GameObject BotController;
     [SerializeField] private GameObject Smelter;
 
@@ -54,6 +54,11 @@ public class TileManager : MonoBehaviour
                 else buildingManager.botControllerButton.interactable = true;
                 buildingManager.OpenMenu(TileBuilding.None);
                 break;
+            case TileBuilding.BotController:
+                if (tileResource == TileResource.None) buildingManager.botControllerButton.interactable = false;
+                else buildingManager.botControllerButton.interactable = true;
+                buildingManager.OpenMenu(TileBuilding.BotController);
+                break;
             case TileBuilding.Smelter:
                 buildingManager.OpenMenu(TileBuilding.Smelter);
                 break;
@@ -63,7 +68,7 @@ public class TileManager : MonoBehaviour
     public void SellBuilding()
     {
         tileData.tileBuilding = TileBuilding.None;
-        foreach (var building in allBuildings) building.SetActive(false);
+        foreach (var building in hideOnSell) building.SetActive(false);
         tileData.tileLevel = new LevelingData();
         buildingLevelInfo.SetActive(false);
         SwitchState(emptyState);
@@ -76,13 +81,13 @@ public class TileManager : MonoBehaviour
         switch (tileData.tileBuilding)
         {
             case TileBuilding.BotController:
-                foreach (var building in allBuildings) building.SetActive(false);
+                foreach (var building in hideOnSell) building.SetActive(false);
                 BotController.SetActive(true);
                 buildingLevelInfo.SetActive(true);
                 SwitchState(botControllerState);
                 break;
             case TileBuilding.Smelter:
-                foreach (var building in allBuildings) building.SetActive(false);
+                foreach (var building in hideOnSell) building.SetActive(false);
                 BotController.SetActive(true);
                 Smelter.SetActive(true);
                 buildingLevelInfo.SetActive(true);
@@ -113,6 +118,7 @@ public class TileManager : MonoBehaviour
     public void SwitchState(TileBaseState state)
     {
         currentState.OnExitState(this);
+        tileData.tileBuildingTimer = 0;
         currentState = state;
         state.EnterState(this);
     }

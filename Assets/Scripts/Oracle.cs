@@ -152,6 +152,9 @@ public class Oracle : SerializedMonoBehaviour
 
         Tiles = saveData.Tiles;
         OwnedResources = saveData.ownedResources;
+        foreach (var resource in (Resources[])Enum.GetValues(typeof(Resources)))
+            if (!oracle.saveData.ownedResources.ContainsKey(resource))
+                oracle.saveData.ownedResources.Add(resource, new Resource());
     }
 
     public void LoadState(string filePath)
@@ -188,6 +191,7 @@ public class Oracle : SerializedMonoBehaviour
     public Dictionary<TileResource, TileBalancing> tileBalancing = new();
     public Dictionary<Resources, TileBalancing> smelterBalancing = new();
     public Dictionary<Resources, Resource> OwnedResources = new();
+    public Dictionary<Resources, Recipe> Recipes = new();
 
 
     [Serializable]
@@ -240,62 +244,39 @@ public class Oracle : SerializedMonoBehaviour
     public class Resource
     {
         public double resource;
+
+        public double resourceModifier = 1;
+        public double costMultiplier = 1;
+
+        public double Tier1
+        {
+            get => resource * tier1 * costMultiplier;
+            set => tier1 = value;
+        }
+
+        public double Tier2
+        {
+            get => resource * tier2 * costMultiplier;
+            set => tier1 = value;
+        }
+
+        public double Tier3
+        {
+            get => resource * tier3 * costMultiplier;
+            set => tier1 = value;
+        }
+
+        public double tier1;
+        public double tier2;
+        public double tier3;
     }
 
-    public enum Resources
-    {
-        Energy,
-        Water,
-        Wood,
-        Coal,
-        Stone,
-        Iron,
-        Copper,
-        Titanium,
-        Silicon,
-        Oil,
-        Hydrogen,
-        RareMetals,
-        Uranium,
-        SulfuricAcid,
-        IronIngot,
-        CopperIngot,
-        Planks,
-        Concrete,
-        Glass,
-        ReinforcedGlass,
-        Steel,
-        Carbon,
-        TitaniumIngot,
-        TitaniumAlloy,
-        Gear,
-        Magnet,
-        ElectricMotor,
-        MagneticCoil,
-        ElectroMagnet,
-        Thruster,
-        CircuitBoard,
-        CPU,
-        DiamondChipset,
-        QuantumChipset,
-        SpaceProbe,
-        SpaceShip,
-        Plastic,
-        Superconductor,
-        Uranium235,
-        Graphene,
-        CarbonNanotubes,
-        Battery,
-        SwarmSolarPanel,
-        DysonFramePart,
-        DysonNanoLattice,
-        DysonSolarPanel,
-        Deuterium
-    }
 
     public class Recipe
     {
         public Dictionary<Resources, Resource> Ingredients = new();
+        public Resources Output;
+        public double OutputAmount;
         public TileManager Tile { get; set; }
     }
 
@@ -358,6 +339,57 @@ public class Oracle : SerializedMonoBehaviour
     #endregion
 
     #region Enums
+
+    public enum Resources
+    {
+        Energy,
+        Water,
+        Wood,
+        Coal,
+        Stone,
+        Iron,
+        Copper,
+        Titanium,
+        Silicon,
+        Oil,
+        Hydrogen,
+        RareMetals,
+        Uranium,
+        SulfuricAcid,
+        IronIngot,
+        CopperIngot,
+        Planks,
+        Concrete,
+        Glass,
+        ReinforcedGlass,
+        Steel,
+        Carbon,
+        TitaniumIngot,
+        TitaniumAlloy,
+        Gear,
+        Magnet,
+        ElectricMotor,
+        MagneticCoil,
+        ElectroMagnet,
+        Thruster,
+        CircuitBoard,
+        CPU,
+        DiamondChipset,
+        QuantumChipset,
+        SpaceProbe,
+        SpaceShip,
+        Plastic,
+        Superconductor,
+        Uranium235,
+        Graphene,
+        CarbonNanotubes,
+        Battery,
+        SwarmSolarPanel,
+        DysonFramePart,
+        DysonNanoLattice,
+        DysonSolarPanel,
+        Deuterium
+    }
 
     public enum BuildingTier
     {

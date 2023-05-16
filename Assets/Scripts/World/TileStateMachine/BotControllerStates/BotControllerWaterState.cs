@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 using static Oracle;
 
 namespace World.TileStateMachine.BotControllerStates
@@ -12,7 +13,7 @@ namespace World.TileStateMachine.BotControllerStates
         {
             tileBalancingData = oracle.tileBalancing[tile.tileResource];
 
-            resource = tile.SetResource(Resources.Water);
+            resource = tile.SetResource(Oracle.Resources.Water);
             tile.timerFillImage.color = tile.tileResourceImage.color;
             OnCompletionInfoUpdate(tile, resource.resource);
         }
@@ -24,7 +25,8 @@ namespace World.TileStateMachine.BotControllerStates
 
         public override void OnExitState(TileManager tile)
         {
-            throw new NotImplementedException();
+            tile.tileData.tileBuildingTimer = 0;
+            OnCompletionInfoUpdate(tile, 0, false);
         }
     }
 }

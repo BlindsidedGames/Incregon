@@ -31,8 +31,16 @@ namespace World.TileStateMachine
             currentState.UpdateState(tile);
         }
 
+        public void SwitchState(SmelterBaseState state, TileManager tile)
+        {
+            currentState.OnExitState(tile);
+            currentState = state;
+            EnterState(tile);
+        }
+
         public override void OnExitState(TileManager tile)
         {
+            currentState.OnExitState(tile);
         }
 
         public override void ProcessResources(TileManager tile)

@@ -529,6 +529,7 @@ RectTransform:
   - {fileID: 6120450985720441074}
   - {fileID: 5066655145822427683}
   - {fileID: 3600863460256672450}
+  - {fileID: 103137106151002889}
   - {fileID: 7093116295100379190}
   m_Father: {fileID: 9076828165364803739}
   m_RootOrder: -1
@@ -1414,7 +1415,6 @@ RectTransform:
   - {fileID: 602617317287283047}
   - {fileID: 5129636796363302738}
   - {fileID: 3688095950648959965}
-  - {fileID: 103137106151002889}
   - {fileID: 7814783323603887091}
   m_Father: {fileID: 6770376250119084951}
   m_RootOrder: -1
@@ -1449,12 +1449,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7595744523984452023}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5066655145822427683}
+  m_Father: {fileID: 6770376250119084951}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1772,9 +1772,10 @@ MonoBehaviour:
     tileBalancing:
       tileBuildingTimerMax: 0
   tileButton: {fileID: 5692422346367344344}
-  allBuildings:
-  - {fileID: 5423707559193444823}
+  hideOnSell:
   - {fileID: 7412080422846142446}
+  - {fileID: 8117528661584717831}
+  - {fileID: 7595744523984452023}
   BotController: {fileID: 7412080422846142446}
   Smelter: {fileID: 7595744523984452023}
   buildingLevelInfo: {fileID: 8117528661584717831}

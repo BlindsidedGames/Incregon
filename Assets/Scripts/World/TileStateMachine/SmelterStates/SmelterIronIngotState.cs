@@ -1,5 +1,6 @@
 ﻿using System;
 using static Oracle;
+using static World.RecipeQueue;
 
 namespace World.TileStateMachine.SmelterStates
 {
@@ -18,26 +19,14 @@ namespace World.TileStateMachine.SmelterStates
             tileBalancingData = oracle.smelterBalancing[Resources.IronIngot];
             resource = tile.SetResource(Resources.IronIngot);
             recipe = new Recipe();
+            recipe.Ingredients = oracle.Recipes[Resources.IronIngot].Ingredients;
 
             tile.tileData.tileBalancing.tileBuildingTimerMax =
                 tile.SetBuildingTimer(tileBalancingData.tileTimer.ResourceGatherTime);
             OnCompletionInfoUpdate(tile, resource.resource);
 
-            switch (tile.tileData.tileBuildingData.buildingTier)
-            {
-                case BuildingTier.Tier1:
-                    recipe.Ingredients.Add(Resources.Iron, new Resource { resource = 1 });
-                    recipe.Tile = tile;
-                    break;
-                case BuildingTier.Tier2:
-                    recipe.Ingredients.Add(Resources.Iron, new Resource { resource = 2 });
-                    recipe.Tile = tile;
-                    break;
-                case BuildingTier.Tier3:
-                    recipe.Ingredients.Add(Resources.Iron, new Resource { resource = 5 });
-                    recipe.Tile = tile;
-                    break;
-            }
+
+            recipe.Tile = tile;
         }
 
         public override void UpdateState(TileManager tile)
@@ -47,6 +36,9 @@ namespace World.TileStateMachine.SmelterStates
 
         public override void OnExitState(TileManager tile)
         {
+            recipeQueueStatic.RemoveEntry(tile);
+            tile.tileData.tileBuildingTimer = 0;
+            OnCompletionInfoUpdate(tile, 0, false);
         }
 
         public override void ProcessResources(TileManager tile)
