@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Utilities;
 using static Oracle;
 
 namespace World
@@ -23,52 +24,20 @@ namespace World
 
         private void LateUpdate()
         {
-            try
-            {
-                foreach (var recipe in recipeQueue)
-                    if (CanProcess(recipe))
-                        foreach (var ingredient in recipe.Ingredients)
-                        {
-                            var resource = oracle.saveData.ownedResources[ingredient.Key];
-                            resource.resource -= ingredient.Value.resource * resource.costMultiplier;
-                            oracle.saveData.ownedResources[recipe.Output].resource += recipe.OutputAmount;
-                            recipe.Tile.ProcessResources();
-                        }
-                    else
-                        failedRecipes.Add(recipe);
+            foreach (var recipe in recipeQueue)
+                if (CalcUtils.CanProcess(recipe))
+                    foreach (var ingredient in recipe.Ingredients)
+                    {
+                        var resource = oracle.saveData.ownedResources[ingredient.Key];
+                        resource.resource -= ingredient.Value.resource * resource.costMultiplier;
+                        oracle.saveData.ownedResources[recipe.Output].resource += recipe.OutputAmount;
+                        recipe.Tile.ProcessResources();
+                    }
+                else
+                    failedRecipes.Add(recipe);
 
-                recipeQueue = failedRecipes;
-                failedRecipes = new List<Recipe>();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
-        }
-
-        private static bool CanProcess(Recipe recipe)
-        {
-            var processResource = true;
-            foreach (var ingredient in recipe.Ingredients)
-            {
-                var resource = oracle.saveData.ownedResources[ingredient.Key];
-                switch (recipe.Tile.tileData.tileBuildingData.buildingTier)
-                {
-                    case BuildingTier.Tier1:
-                        processResource = ingredient.Value.Tier1 * resource.costMultiplier < resource.resource;
-                        break;
-                    case BuildingTier.Tier2:
-                        processResource = ingredient.Value.Tier2 * resource.costMultiplier < resource.resource;
-                        break;
-                    case BuildingTier.Tier3:
-                        processResource = ingredient.Value.Tier3 * resource.costMultiplier < resource.resource;
-                        break;
-                }
-
-                if (!processResource) break;
-            }
-
-            return processResource;
+            recipeQueue = failedRecipes;
+            failedRecipes = new List<Recipe>();
         }
 
         #region Singleton class: RecipeQueue

@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using World.TileStateMachine.SmelterStates;
 using static Oracle;
+using static World.PowerManager;
 
 namespace World.TileStateMachine
 {
@@ -14,9 +15,11 @@ namespace World.TileStateMachine
         public override void EnterState(TileManager tile)
         {
             tile.smelterImageGameObject.SetActive(true);
+            tile.CalculateEnergyRequirement();
             switch (tile.tileData.tileBuildingData.smelterRecipe)
             {
                 case SmelterRecipe.None:
+                    tile.buildingEnergyValue = 0;
                     currentState = emptyState;
                     currentState.EnterState(tile);
                     break;
@@ -26,6 +29,7 @@ namespace World.TileStateMachine
                     break;
             }
         }
+
 
         public override void UpdateState(TileManager tile)
         {

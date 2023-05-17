@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Utilities;
 using static Oracle;
+using static World.PowerManager;
 
 namespace World.TileStateMachine.BotControllerStates
 {
@@ -12,7 +13,19 @@ namespace World.TileStateMachine.BotControllerStates
 
         public abstract void OnExitState(TileManager tile);
 
+
         public Data data => oracle.data;
+        private EnergyManagement em => oracle.saveData.energyManagement;
+
+        public void RegisterBuilding(TileManager tile)
+        {
+            powerManager.RegisterBuildingEntry(tile);
+        }
+
+        public void DeregisterBuilding(TileManager tile)
+        {
+            powerManager.RemoveBuildingEntry(tile);
+        }
 
         public void OnCompletionInfoUpdate(TileManager tile, double resource, bool set = true)
         {
@@ -48,7 +61,7 @@ namespace World.TileStateMachine.BotControllerStates
                         tile.SetBuildingTimer(tileBalancingData.tileTimer.ResourceGatherTime);
                     break;
                 case false:
-                    tile.tileData.tileBuildingTimer += Time.deltaTime;
+                    tile.tileData.tileBuildingTimer += Time.deltaTime * (float)em.energyModifier;
                     break;
             }
 

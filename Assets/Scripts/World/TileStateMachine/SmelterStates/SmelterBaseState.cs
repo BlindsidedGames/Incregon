@@ -3,6 +3,7 @@ using UnityEngine;
 using Utilities;
 using static Oracle;
 using static World.RecipeQueue;
+using static World.PowerManager;
 
 namespace World.TileStateMachine.SmelterStates
 {
@@ -17,6 +18,7 @@ namespace World.TileStateMachine.SmelterStates
         public abstract void ProcessResources(TileManager tile);
 
         public Data data => oracle.data;
+        private EnergyManagement em => oracle.saveData.energyManagement;
 
         public void OnCompletionInfoUpdate(TileManager tile, double resource, bool set = true)
         {
@@ -25,6 +27,16 @@ namespace World.TileStateMachine.SmelterStates
                 tile.tileData.tileLevel.experience);
             tile.levelText.text = $"Lvl: {tile.tileData.tileLevel.level}";
             if (!set) tile.timerFillImage.fillAmount = 0;
+        }
+
+        public void RegisterBuilding(TileManager tile)
+        {
+            powerManager.RegisterBuildingEntry(tile);
+        }
+
+        public void DeregisterBuilding(TileManager tile)
+        {
+            powerManager.RemoveBuildingEntry(tile);
         }
 
         public bool RunBuilding(TileManager tile, TileBalancing tileBalancingData,
@@ -51,7 +63,7 @@ namespace World.TileStateMachine.SmelterStates
                         isProcessing = true;
                         break;
                     case false:
-                        tile.tileData.tileBuildingTimer += Time.deltaTime;
+                        tile.tileData.tileBuildingTimer += Time.deltaTime * (float)em.energyModifier;
                         break;
                 }
 

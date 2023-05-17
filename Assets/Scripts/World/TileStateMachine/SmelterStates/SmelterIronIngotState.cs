@@ -1,6 +1,7 @@
 ﻿using System;
 using static Oracle;
 using static World.RecipeQueue;
+using static World.PowerManager;
 
 namespace World.TileStateMachine.SmelterStates
 {
@@ -25,7 +26,7 @@ namespace World.TileStateMachine.SmelterStates
                 tile.SetBuildingTimer(tileBalancingData.tileTimer.ResourceGatherTime);
             OnCompletionInfoUpdate(tile, resource.resource);
 
-
+            RegisterBuilding(tile);
             recipe.Tile = tile;
         }
 
@@ -37,6 +38,7 @@ namespace World.TileStateMachine.SmelterStates
         public override void OnExitState(TileManager tile)
         {
             recipeQueueStatic.RemoveEntry(tile);
+            DeregisterBuilding(tile);
             tile.tileData.tileBuildingTimer = 0;
             OnCompletionInfoUpdate(tile, 0, false);
         }

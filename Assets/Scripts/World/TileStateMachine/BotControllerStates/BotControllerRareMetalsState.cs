@@ -15,16 +15,18 @@ namespace World.TileStateMachine.BotControllerStates
             resource = tile.SetResource(Resources.RareMetals);
             tile.timerFillImage.color = tile.tileResourceImage.color;
             OnCompletionInfoUpdate(tile, resource.resource);
+            RegisterBuilding(tile);
         }
 
         public override void UpdateState(TileManager tile)
         {
-            RunBuilding(tile, tileBalancingData,resource);
+            RunBuilding(tile, tileBalancingData, resource);
         }
 
         public override void OnExitState(TileManager tile)
         {
             tile.tileData.tileBuildingTimer = 0;
+            DeregisterBuilding(tile);
             OnCompletionInfoUpdate(tile, 0, false);
         }
     }

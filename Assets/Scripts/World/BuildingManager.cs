@@ -17,6 +17,9 @@ public class BuildingManager : MonoBehaviour
     [Space(10)] [SerializeField] private Button smelterIronIngotButton;
     [SerializeField] private Button smelterNoneButton;
 
+    [Space(10)] [Header("==== PowerStuff ===")] [SerializeField]
+    private Button windTurbinePurchaseButton;
+
     private void Start()
     {
         botControllerButton.onClick.AddListener(() => BuildBuilding(TileBuilding.BotController));
@@ -39,7 +42,15 @@ public class BuildingManager : MonoBehaviour
             tileManager.SwitchState(tileManager.currentState);
             tileManager.SellBuilding();
         });
+
+
         sellBuilding.onClick.AddListener(() => tileManager.SellBuilding());
+
+        windTurbinePurchaseButton.onClick.AddListener(() =>
+        {
+            tileManager.tileData.tileBuildingData.powerBuilding = PowerBuilding.WindTurbine;
+            BuildBuilding(TileBuilding.Power);
+        });
     }
 
     public void OpenMenu(TileBuilding building)
@@ -55,6 +66,9 @@ public class BuildingManager : MonoBehaviour
                 break;
             case TileBuilding.Smelter:
                 SmelterMenu.SetActive(true);
+                break;
+            case TileBuilding.Power:
+                buildingMenu.SetActive(true);
                 break;
         }
     }

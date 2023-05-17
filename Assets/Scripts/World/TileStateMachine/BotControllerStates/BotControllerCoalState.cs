@@ -16,6 +16,7 @@ namespace World.TileStateMachine.BotControllerStates
 
             tile.timerFillImage.color = tile.tileResourceImage.color;
             OnCompletionInfoUpdate(tile, resource.resource);
+            RegisterBuilding(tile);
         }
 
         public override void UpdateState(TileManager tile)
@@ -27,6 +28,7 @@ namespace World.TileStateMachine.BotControllerStates
         public override void OnExitState(TileManager tile)
         {
             tile.tileData.tileBuildingTimer = 0;
+            DeregisterBuilding(tile);
             OnCompletionInfoUpdate(tile, 0, false);
         }
     }

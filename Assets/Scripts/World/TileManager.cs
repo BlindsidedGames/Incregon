@@ -9,22 +9,36 @@ using static BuildingManager;
 public class TileManager : MonoBehaviour
 {
     public TileResource tileResource;
+    public double buildingEnergyValue;
+
     public int tileID;
     public Tile tileData;
 
     [SerializeField] private Button tileButton;
+
     [Space(10)] [SerializeField] private GameObject[] hideOnSell;
+
     [Space(10)] [SerializeField] private GameObject progressBarParent;
     public Image timerFillImage;
     public TMP_Text resourcesText;
+    public Image tileResourceImage;
+
     [Space(10)] [SerializeField] private GameObject buildingLevelInfo;
     public Image levelFillImage;
     public TMP_Text levelText;
-    [Space(10)] public Image tileResourceImage;
+
+    [Space(10)] [Header("==== SmelterStuff ===")]
     public GameObject smelterImageGameObject;
+
     public GameObject smelterIronIngotImageGameObject;
     public GameObject smelterCopperIngotImageGameObject;
     public GameObject smelterTitaniumIngotImageGameObject;
+
+    [Space(10)] [Header("==== PowerStuff ===")]
+    public GameObject powerSatisfactionBar;
+
+    public Image powerSatisfactionFillImage;
+    public GameObject windTurbineImageGameObject;
 
 
     private void Start()
@@ -63,14 +77,17 @@ public class TileManager : MonoBehaviour
             case TileBuilding.Smelter:
                 buildingManager.OpenMenu(TileBuilding.Smelter);
                 break;
+            case TileBuilding.Power:
+                buildingManager.OpenMenu(TileBuilding.Power);
+                break;
         }
     }
 
     public void SellBuilding()
     {
         tileData.tileBuilding = TileBuilding.None;
-        foreach (var building in hideOnSell) building.SetActive(false);
         tileData.tileLevel = new LevelingData();
+        foreach (var building in hideOnSell) building.SetActive(false);
         buildingLevelInfo.SetActive(false);
         SwitchState(emptyState);
         buildingManager.CloseMenu();
@@ -93,6 +110,21 @@ public class TileManager : MonoBehaviour
                 smelterImageGameObject.SetActive(true);
                 buildingLevelInfo.SetActive(true);
                 SwitchState(smelterState);
+                break;
+            case TileBuilding.Power:
+                foreach (var building in hideOnSell) building.SetActive(false);
+                progressBarParent.SetActive(true);
+                powerSatisfactionBar.SetActive(true);
+                buildingLevelInfo.SetActive(true);
+                switch (tileData.tileBuildingData.powerBuilding)
+                {
+                    case PowerBuilding.WindTurbine:
+                        windTurbineImageGameObject.SetActive(true);
+                        break;
+                }
+
+                buildingLevelInfo.SetActive(true);
+                SwitchState(powerState);
                 break;
         }
     }
@@ -119,7 +151,7 @@ public class TileManager : MonoBehaviour
     public void SwitchState(TileBaseState state)
     {
         currentState.OnExitState(this);
-        DisableAllSmelterImages();
+        DisableAllTileStuff();
         tileData.tileBuildingTimer = 0;
         currentState = state;
         state.EnterState(this);
@@ -130,9 +162,31 @@ public class TileManager : MonoBehaviour
         currentState.ProcessResources(this);
     }
 
+    private void DisableAllTileStuff()
+    {
+        DisableAllSmelterImages();
+    }
+
     #endregion
 
     #region SharedFunctions
+
+    public void CalculateEnergyRequirement()
+    {
+        var pwr = oracle.tileBuildingEnergyBalancing[tileData.tileBuilding];
+        switch (tileData.tileBuildingData.buildingTier)
+        {
+            case BuildingTier.Tier1:
+                buildingEnergyValue = pwr.tier1;
+                break;
+            case BuildingTier.Tier2:
+                buildingEnergyValue = pwr.tier2;
+                break;
+            case BuildingTier.Tier3:
+                buildingEnergyValue = pwr.tier3;
+                break;
+        }
+    }
 
     public Resource SetResource(Oracle.Resources resource)
     {

@@ -123,6 +123,31 @@ namespace Utilities
         {
             return new string(s.ToCharArray().OrderBy(x => Guid.NewGuid()).ToArray());
         }
+        
+        public static bool CanProcess(Recipe recipe)
+        {
+            var processResource = true;
+            foreach (var ingredient in recipe.Ingredients)
+            {
+                var resource = oracle.saveData.ownedResources[ingredient.Key];
+                switch (recipe.Tile.tileData.tileBuildingData.buildingTier)
+                {
+                    case BuildingTier.Tier1:
+                        processResource = ingredient.Value.Tier1 * resource.costMultiplier < resource.resource;
+                        break;
+                    case BuildingTier.Tier2:
+                        processResource = ingredient.Value.Tier2 * resource.costMultiplier < resource.resource;
+                        break;
+                    case BuildingTier.Tier3:
+                        processResource = ingredient.Value.Tier3 * resource.costMultiplier < resource.resource;
+                        break;
+                }
+
+                if (!processResource) break;
+            }
+
+            return processResource;
+        }
 
 
         #region BuyCalcs

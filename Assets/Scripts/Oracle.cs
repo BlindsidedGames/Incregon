@@ -190,9 +190,21 @@ public class Oracle : SerializedMonoBehaviour
     [Space(10)] public Dictionary<int, Tile> Tiles = new();
     public Dictionary<TileResource, TileBalancing> tileBalancing = new();
     public Dictionary<Resources, TileBalancing> smelterBalancing = new();
+    public Dictionary<PowerBuilding, PowerBalance> powerBuildingBalancing = new();
+    public Dictionary<TileBuilding, PowerBalance> tileBuildingEnergyBalancing = new();
     public Dictionary<Resources, Resource> OwnedResources = new();
     public Dictionary<Resources, Recipe> Recipes = new();
 
+    [Serializable]
+    public class PowerBalance
+    {
+        public double tier1;
+        public double tier2;
+        public double tier3;
+
+        public double production;
+        public double storage;
+    }
 
     [Serializable]
     public class Data
@@ -229,9 +241,20 @@ public class Oracle : SerializedMonoBehaviour
         public Statistics statistics = new();
         public Preferences preferences = new();
 
-
+        public EnergyManagement energyManagement = new();
         public Dictionary<Resources, Resource> ownedResources = new();
         public Dictionary<int, Tile> Tiles = new();
+    }
+
+    [Serializable]
+    public class EnergyManagement
+    {
+        public double energy;
+        public double energyMax;
+        public double energyModifier;
+
+        public double energyPerSecond;
+        public double energyConsumptionPerSecond;
     }
 
     [Serializable]

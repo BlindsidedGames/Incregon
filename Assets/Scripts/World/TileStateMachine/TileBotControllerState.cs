@@ -24,6 +24,7 @@ namespace World.TileStateMachine
 
         public override void EnterState(TileManager tile)
         {
+            tile.CalculateEnergyRequirement();
             switch (tile.tileResource)
             {
                 case TileResource.Wood:
